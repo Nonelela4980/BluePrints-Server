@@ -1,4 +1,7 @@
+package com.example.capstone;
+
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -11,11 +14,11 @@ public class Server {
         this.counter = 0;
     }
 
-    /**Starts the server, allow multiple client connection*/
+    /**Starts the connection*/
     public void start(){
         try {
             serverSocket=new ServerSocket(5000);
-            System.out.println("Server started on "+serverSocket.getInetAddress());
+            System.out.println("Server started on "+ InetAddress.getLocalHost().getHostAddress());
             while (!serverSocket.isClosed()){
                 Socket clientSocket=serverSocket.accept();
                 counter++;
@@ -31,7 +34,7 @@ public class Server {
             System.out.println("Error: "+e.getMessage());
         }
     }
-    //close server
+    //close nmmu.wrpv302.capstone.client.server
     public void closeServer(){
         try
         {
