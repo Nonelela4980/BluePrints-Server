@@ -11,6 +11,6 @@ public class JoinedGame extends Message {
     }
     @Override
     public String toString() {
-        return String.format("JoinedGame(%s)",player_username);
+        return String.format("%s is online",player_username);
     }
 }

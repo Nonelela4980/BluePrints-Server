@@ -26,8 +26,6 @@ public class Server {
                 
                 //handles mul
                 ClientHandler clientHandler=new ClientHandler(clientSocket,"Player "+counter);
-                Thread connectionThread=new Thread(clientHandler);
-                connectionThread.start();
             }
         }catch (IOException e){
             closeServer();
