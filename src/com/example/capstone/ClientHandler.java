@@ -32,6 +32,7 @@ public class ClientHandler {
         System.out.println(new JoinedGame(username));
     }
 
+    //Client read thread which is responsible for reading messages from the client
     public class ReadingThread extends Thread {
         @Override
         public void run() {
@@ -57,6 +58,7 @@ public class ClientHandler {
         }
     }
 
+    //client write thread which is responsible for writing messages to the thread
     public class WriteThread extends Thread {
         @Override
         public void run() {
@@ -84,7 +86,6 @@ public class ClientHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     //Server sends a message to a client
