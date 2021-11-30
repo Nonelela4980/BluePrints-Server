@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="BluePrints-Server:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/BluePrints_Server_jar</output-path>
+    <root id="archive" name="BluePrints-Server.jar">
+      <element id="module-output" name="BluePrints-Server" />
+    </root>
+  </artifact>
+</component>

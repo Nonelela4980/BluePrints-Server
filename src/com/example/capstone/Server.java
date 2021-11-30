@@ -9,11 +9,9 @@ public class Server {
     private ServerSocket serverSocket;
     private final int PORT_NUMBER=5000;
     int counter;
-
     public Server() {
         this.counter = 0;
     }
-
     /**Starts the connection*/
     public void start(){
         try {
@@ -23,9 +21,8 @@ public class Server {
                 Socket clientSocket=serverSocket.accept();
                 counter++;
                 System.out.println("Client#"+counter+ " is connected from: "+clientSocket.getInetAddress());
-                
                 //handles mul
-                ClientHandler clientHandler=new ClientHandler(clientSocket,"Player "+counter);
+                ClientHandler clientHandler=new ClientHandler(clientSocket);
             }
         }catch (IOException e){
             closeServer();

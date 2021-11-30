@@ -21,11 +21,10 @@ public class ClientHandler {
     public String username;
     ReadingThread readThread;
     WriteThread writeThread;
-
-    public ClientHandler(Socket socket, String username)
+    public boolean isPlaying=false;
+    public ClientHandler(Socket socket)
     {
         this.socket=socket;
-        this.username=username;
         readThread=new ReadingThread();
         readThread.start();
         GameController.addClient(this);
@@ -49,7 +48,6 @@ public class ClientHandler {
                     message = (Message) in.readObject();
                     message.applyLogic(ClientHandler.this);
                     System.out.println(username + "------>" + message);
-
                 } while (message.getClass() != Quit.class);
             } catch (Exception e) {
                 System.out.println("ReadingThread error:" + e.getMessage() + "for" + username);
@@ -57,7 +55,6 @@ public class ClientHandler {
             }
         }
     }
-
     //client write thread which is responsible for writing messages to the thread
     public class WriteThread extends Thread {
         @Override

@@ -11,6 +11,8 @@ public class CardDropped extends Message
     @Override
     public void applyLogic(Object context)
     {
+        //tell other players so they can update
         GameController.notifyOtherPlayers(new UpdateGameBoard(cardID,drawable));
+        GameController.changePlayer();
     }
 }
